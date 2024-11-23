@@ -23,7 +23,7 @@ console.log(typeof(number)); // String
 
 - **What is package.json in NODE ?**
 
- ![image.png](Images\image.png)
+ ![image.png](Images/image.png)
 
   *_Learn :_ CallBack Functions , IIFE
 
@@ -36,7 +36,7 @@ let os = require('os');
 
 _Ex :_
 
-![image copy.png](Images\img2.png)
+![image copy.png](Images/img2.png)
 
 - **How to import files in JS ?**
 
@@ -49,7 +49,7 @@ const notes = require('./notes.js')
 - **Module.export() in ES6** : In the 'notes.js' declare a var, and now we will use it in server.js . So we need to export it by :
 
 
-![img3.png](Images\img3.png)
+![img3.png](Images/img3.png)
 
 now in server.js , we will use it by :- 
 
@@ -152,7 +152,7 @@ console.log(result); // [1, 2, 3, 4]
 
 - JSON : (JS Object Notation)
 
-![img4.png](Images\img4.png)
+![img4.png](Images/img4.png)
 
 ```js
 CONVERTING STRING TO OBJECT
@@ -184,7 +184,7 @@ console.log(typeof objToJsonStr); // Output: string
 ```
 ```
 
-![img5.png](Images\img5.png)
+![img5.png](Images/img5.png)
 
 - CREATING SERVER IN NODE JS :-
 
@@ -249,20 +249,20 @@ _ANS:_
  * Now, enter shell to write query : `mongosh`
  * _QUERIES_ :- 
 
- ![img-in-bw.png](Images\img-in-bw.png)
- ![img6.png](Images\img6.png)
- ![img7.png](Images\img7.png)
- ![img8.png](Images\img8.png)
- ![img9.png](Images\img9.png)
- ![img10.png](Images\img10.png)
- ![img11.png](Images\img11.png)
+ ![img-in-bw.png](Images/img-in-bw.png)
+ ![img6.png](Images/img6.png)
+ ![img7.png](Images/img7.png)
+ ![img8.png](Images/img8.png)
+ ![img9.png](Images/img9.png)
+ ![img10.png](Images/img10.png)
+ ![img11.png](Images/img11.png)
 
  - MongoDB COMPASS :
 
- ![img12.png](Images\Img12.png)
+ ![img12.png](Images/Img12.png)
 
 - _Now, from the terminal_ :-
-![img13](Images\img13.png)
+![img13](Images/img13.png)
 
 - Copy : `mongodb://127.0.0.1:27017` & paste in MongoDB Compass. 
 
@@ -271,21 +271,21 @@ _ANS:_
 ` NOTE : `*AND THIS IS HOW WE CONNECT FRONT-END , SERVER AND BACKEND*
 
 - 
-![img14](Images\img14.png)
+![img14](Images/img14.png)
 
 - MONGOOSE :-
 
-![img15.png](Images\img15.png)
-![img16.png](Images\img16.png)
+![img15.png](Images/img15.png)
+![img16.png](Images/img16.png)
 
 ### DB Connection :-
 
-![img17.png](Images\img17.png)
+![img17.png](Images/img17.png)
  - Terminal : `npm i mongoose`
 
-![img18.png](Images\img18.png)
-![img19.png](Images\img19.png)
-![img20.png](Images\img20.png)
+![img18.png](Images/img18.png)
+![img19.png](Images/img19.png)
+![img20.png](Images/img20.png)
 
 ```js
 1. Make a New File , 'db.js'
@@ -333,14 +333,14 @@ module.exports = db;
 
 ### Models in Mongoose
 
-![img21.png](Images\img21.png)
+![img21.png](Images/img21.png)
 
 - Now we make folder named 'models' and inside it a file named 'person.js'
 
 And inside the file :
 
-![img22.png](Images\img22.png)
-![img23.png](Images\img23.png)
+![img22.png](Images/img22.png)
+![img23.png](Images/img23.png)
 
 - Now export this inside the 'server.js',
 
@@ -348,13 +348,13 @@ And inside the file :
 
 *
 - BODY PARSER :
-![img24](Images\img24.png)
+![img24](Images/img24.png)
 -Add this in 'server.js' :-
-![img25](Images\img25.png)
+![img25](Images/img25.png)
 
 ### Async & Await :
 
-![img26](Images\img26.png)
-![img27](Images\img27.png)
+![img26](Images/img26.png)
+![img27](Images/img27.png)
 - EX :
-![img28](Images\img28.png)
+![img28](Images/img28.png)
