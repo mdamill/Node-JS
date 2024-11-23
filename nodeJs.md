@@ -358,3 +358,118 @@ And inside the file :
 ![img27](Images/img27.png)
 - EX :
 ![img28](Images/img28.png)
+
+
+## POST & GET METHOD :- _Sending and receiving data to/from database._
+
+- Step 1 :- Make a Folder, and inside it a file named (which end point we've to hit)
+
+EX: ![](Images/img29.png)
+
+Step 2 :-  Inside this (menu.js) , define Mongoose Schema ,
+
+```js
+
+const mongoose = require('mongoose');
+
+const menuSchema = new mongoose.Schema({
+    name: {
+        type: String,
+        required: true
+    },
+    price: {
+        type: Number,
+        required: true
+    },
+    taste: {
+        type: String,
+    },
+    ingredients: {
+        type: [String],
+        validate: {
+            validator: function(v) {
+                return v.length <= 3; // Ensures exactly three ingredients
+            },
+            message: props => `${props.value} must have exactly three ingredients` // Added custom error message
+        }
+    },
+    num_sales: {
+        type: Number
+    }
+});
+
+const Menu = mongoose.model('Menu', menuSchema);
+module.exports = Menu;
+
+```
+
+- Step 3 :- Inside 'Server.js' we will require this file by , 
+
+```js
+const express = require('express')
+const app = express()
+
+const db = require('./db');
+
+const bodyParser = require('body-parser');
+app.use(bodyParser.json());
+
+const Person = require('./Models/persons')
+
+const Menu = require('./Models/menu')
+.
+. // post methods
+.// get methods
+.
+app.listen(3000);
+
+```
+
+- Step 4 : POST Method in the server.js File.
+
+```js
+// POST : Menu
+app.post('/menu', async (req,res) =>{
+
+    try{
+        const data = req.body;
+        const newMenu = new Menu(data);
+        const response = await newMenu.save();
+        console.log(`Data Saved !`);
+        res.status(200).json(response);
+    }catch(err){
+        console.log(err);
+        res.status(500).json({Error:`Internal Server Error`})
+    }
+    
+})
+```
+
+- Step 5 : GET Method in the server.js File.
+
+```js
+app.get('/menu', async(req,res)=>{
+
+    try{const data = await Menu.find();
+
+    console.log(data);
+    res.status(200).json(data);
+}
+    catch(err){
+        console.log(`Error`);
+        res.status(500).json({error :'Error'})
+    }
+})
+```
+
+* Sending data in POST Method in Postman (raw+Json) : `http://localhost:3000/menu`
+
+```
+{
+    "name" : "PUFF",
+    "price" : 25,
+    "taste" : "Salty",
+    "ingredients": ["Salt","Maize"]
+    // "num_sales" : 
+}
+```
