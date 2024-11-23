@@ -473,3 +473,26 @@ app.get('/menu', async(req,res)=>{
     // "num_sales" : 
 }
 ```
+
+## Query param in Node JS :- [Parameterised ]
+
+
+```js
+app.get('/person/:workType', async (req, res) => {
+    try {
+        const workType = req.params.workType;
+
+        if (workType === 'chef' || workType === 'manager' || workType === 'waiter') {
+            const response = await Person.find({ work: workType });
+            console.log("Response Fetched");
+            res.status(200).json(response);
+        } else {
+            res.status(404).json({ error: "Invalid Type Error" });
+        }
+    } catch (error) {
+        console.log(error);
+        res.status(500).json({ error: "Internal Server Error" });
+    }
+});
+
+```
